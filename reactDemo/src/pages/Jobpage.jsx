@@ -4,9 +4,10 @@ import { FaArrowLeft,FaMapMarker } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 const Jobpage = () => {
-  let {id} = useParams()
+  const {id} = useParams()
+  console.log(id)
   const job = useLoaderData()
-  console.log(job)
+  // console.log(job)
 
   return (
     <section>
@@ -49,9 +50,9 @@ const Jobpage = () => {
               </div>
             </main>
 
-            {/* <!-- Sidebar --> */}
+            
             <aside>
-              {/* <!-- Company Info --> */}
+              
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-6">Company Info</h3>
 
@@ -74,7 +75,7 @@ const Jobpage = () => {
                 <p className="my-2 bg-indigo-100 p-2 font-bold">{job.company.contactPhone}</p>
               </div>
 
-              {/* <!-- Manage --> */}
+              
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                 <h3 className="text-xl font-bold mb-6">Manage Job</h3>
                 <Link
@@ -95,10 +96,16 @@ const Jobpage = () => {
 }
 
 const jobLoader = async({params}) => {
-  const res = await fetch(`/api/jobs/${params.id}`)
-  const data = await res.json()
-  return data
+  try {
+    const res = await fetch(`/api/jobs/${params.id}`)
+    const data = await res.json()
+    return data
+  } catch (error) {
+    console.log('Error fetching data: ',error)
+    throw error
+  }
+  
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export {Jobpage as default,jobLoader}
+export {Jobpage,jobLoader}
