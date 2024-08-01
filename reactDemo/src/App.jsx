@@ -8,6 +8,12 @@ import NotFound from './pages/NotFound'
 import {Jobpage,jobLoader} from './pages/Jobpage'
 import AddJobPage from './pages/AddJobPage'
 
+const App = () => {
+  const addJob = (newJob) => {
+    console.log(newJob)
+  }
+
+
 const router = createBrowserRouter(
     createRoutesFromElements(
     <Route path='/' element={<MainLayout/>}>
@@ -20,7 +26,7 @@ const router = createBrowserRouter(
     )
 )
 
-const App = () => {
+
   return (    
       <RouterProvider router={router}/>        
   )
