@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const Jobpage = () => {
   let {id} = useParams()
-  const {job} = useLoaderData()
+  const job = useLoaderData()
   console.log(job)
 
   return (
@@ -96,7 +96,7 @@ const Jobpage = () => {
 
 const jobLoader = async({params}) => {
   const res = await fetch(`/api/jobs/${params.id}`)
-  const data = res.json()
+  const data = await res.json()
   return data
 }
 
