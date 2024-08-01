@@ -5,9 +5,9 @@ import { Link } from "react-router-dom"
 
 const Jobpage = () => {
   const {id} = useParams()
-  console.log(id)
+  // console.log(id)
   const job = useLoaderData()
-  // console.log(job)
+  console.log(job)
 
   return (
     <section>
