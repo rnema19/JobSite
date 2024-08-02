@@ -11,7 +11,7 @@ const Homecards = () => {
               Browse our Fresher jobs and Projects and give a start to your career
             </p>
             <a
-              href="/jobs.html"
+              href="/jobs"
               className="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
             >
               Browse Jobs

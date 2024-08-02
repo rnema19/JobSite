@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Routes,Route, useLoaderData, useParams } from "react-router-dom"
+import { useLoaderData, useParams } from "react-router-dom"
 import { FaArrowLeft,FaMapMarker } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
@@ -7,6 +7,7 @@ const Jobpage = () => {
   const {id} = useParams()
   // console.log(id)
   const job = useLoaderData()
+  // return job
   console.log(job)
 
   return (
@@ -96,6 +97,7 @@ const Jobpage = () => {
 }
 
 const jobLoader = async({params}) => {
+  // const url = `/api/jobs/${params.id}`
   try {
     const res = await fetch(`/api/jobs/${params.id}`)
     const data = await res.json()

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import {Route,createBrowserRouter,createRoutesFromElements,
 RouterProvider} from 'react-router-dom'
 
@@ -8,9 +10,19 @@ import NotFound from './pages/NotFound'
 import {Jobpage,jobLoader} from './pages/Jobpage'
 import AddJobPage from './pages/AddJobPage'
 
+// const PORT = process.env.PORT('0.0.0.0')
+
 const App = () => {
-  const addJob = (newJob) => {
+  const addJob = async(newJob) => {
+    const res = await fetch('/api/jobs',{
+      method : 'post',
+      headers : {
+        'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify(newJob)
+    })
     console.log(newJob)
+    return
   }
 
 
