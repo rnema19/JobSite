@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 // eslint-disable-next-line react/prop-types
@@ -35,6 +36,7 @@ const navigate = useNavigate()
 
     console.log(newjob)
     addJobSubmit(newjob)
+    toast.success("Job added Succesfully!")
 
     return navigate('/jobs')
   }

@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "843b",
-      "title": "Software Developer",
-      "type": "Full-Time",
-      "location": "Hyderabad",
-      "description": "Cloud and debugging,testing",
-      "salary": "$100K - 125K",
-      "company": {
-        "name": "Oracle",
-        "description": "Cloud and software",
-        "contactEmail": "careers@oracle.com",
-        "contactPhone": "080-24458888"
-      }
     }
   ]
 }
